@@ -32,27 +32,32 @@ Designed with a scalable modular architecture, controller–service pattern, and
 
 📁 Project Structure
 
-src/
-├── app.ts
-├── server.ts
-├── config/
-│   ├── index.ts
-│   └── db.ts
-├── middleware/
-│   ├── auth.ts
-│   └── logger.ts
-├── modules/
-│   ├── auth/
+src
+├── app.ts                # Express app configuration
+├── server.ts             # Application entry point
+│
+├── config                # App & database configuration
+│   ├── index.ts          # Environment variables
+│   └── db.ts             # PostgreSQL connection
+│
+├── middleware             # Custom middleware
+│   ├── auth.ts           # JWT & role-based authorization
+│   └── logger.ts         # Request logger
+│
+├── modules                # Feature-based modules
+│   │
+│   ├── auth               # Authentication module
 │   │   └── auth.route.ts
-│   ├── users/
-│   │   ├── user.controller.ts
+│   │
+│   ├── users              # User management
 │   │   ├── user.route.ts
+│   │   ├── user.controller.ts
 │   │   └── user.service.ts
-│   └── todos/
-│       ├── todos.controller.ts
+│   │
+│   └── todos              # Todo management
 │       ├── todos.route.ts
+│       ├── todos.controller.ts
 │       └── todos.service.ts
-
 
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
