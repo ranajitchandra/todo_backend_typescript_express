@@ -127,6 +127,8 @@ Attaches user data to req.user
 | POST   | `/auth/login`    | Login       |
 | POST   | `/auth/register` | Register    |
 
+
+
 🧪 Example Request
 Create Todo
 
@@ -137,6 +139,7 @@ Content-Type: application/json
   "title": "Learn TypeScript",
   "completed": false
 }
+
 
 ❌ Error Handling
 Route Not Found
@@ -151,6 +154,7 @@ Unauthorized Access
   "error": "Unauthorized!!"
 }
 
+
 🧠 Best Practices Used
 
 Separation of concerns
@@ -163,13 +167,41 @@ Clean and readable codebase
 
 RESTful conventions
 
+
 👨‍💻 Author
 
 Ranajit
 Backend Developer | Node.js | TypeScript
 
-📜 License
 
-This project is licensed under the MIT License.
+
+---
+
+## 📁 Project Structure
+
+```bash
+$ tree src
+src
+├── app.ts
+├── server.ts
+├── config
+│   ├── index.ts
+│   └── db.ts
+├── middleware
+│   ├── auth.ts
+│   └── logger.ts
+├── modules
+│   ├── auth
+│   │   └── auth.route.ts
+│   ├── users
+│   │   ├── user.route.ts
+│   │   ├── user.controller.ts
+│   │   └── user.service.ts
+│   └── todos
+│       ├── todos.route.ts
+│       ├── todos.controller.ts
+│       └── todos.service.ts
+
+
 
 ⭐ If you like this project, give it a star on GitHub!
