@@ -1,11 +1,11 @@
 
 import express, { NextFunction, Request, Response } from "express";
-import config from "./config";
 import initDB, { pool } from "./config/db";
 import logger from "./middleware/logger";
 import { userRoutes } from "./modules/users/user.route";
 import { todosRoutes } from "./modules/todos/todos.route";
 import { authRoutes } from "./modules/auth/auth.route";
+import path from "path";
 
 
 const app = express()
@@ -22,9 +22,9 @@ initDB()
 
 
 
-app.get('/', logger, (req: Request, res: Response) => {
-    res.send('Hello I am Ranajit!')
-})
+app.get("/", logger, (req: Request, res: Response) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 // user CURD
 app.use("/users", userRoutes)
