@@ -8,17 +8,12 @@ import { todosRoutes } from "./modules/todos/todos.route";
 import { authRoutes } from "./modules/auth/auth.route";
 
 
-
-
 const app = express()
-
 
 // middleware body parser
 app.use(express.json())
 // middleware form data parser
 app.use(express.urlencoded())
-
-
 
 // initializer DB
 initDB()
@@ -39,9 +34,6 @@ app.use("/todos", todosRoutes)
 
 // auth Route
 app.use("/auth", authRoutes)
-
-
-
 
 
 // prevent route not exist
